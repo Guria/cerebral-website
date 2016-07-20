@@ -3,19 +3,19 @@
 <p class="paragraph">All state changes are reflected live in the debugger, giving you a complete picture of how your application behaves. You can even edit the state tree directly and see the changes immediately in your application&#39;s UI.</p>
 
 </div><div class="row__col row__col_sw_24 row__col_lw_11 row__col_lo_2"><div class="tabs i-bem" data-bem='{"tabs":{}}'><span class="radio-group radio-group_theme_islands radio-group_size_l radio-group_type_button control-group i-bem" data-bem='{"radio-group":{}}' role="radiogroup"><label class="radio radio_type_button radio_theme_islands radio_size_l radio_checked i-bem" data-bem='{"radio":{}}'><button class="button button_togglable_radio button_checked button_theme_islands button_size_l button__control i-bem" data-bem='{"button":{}}' role="button" type="button" aria-pressed="true"><span class="button__text">controller.js</span></button><input class="radio__control" type="radio" autocomplete="off" value="0" checked="checked"/></label><label class="radio radio_type_button radio_theme_islands radio_size_l i-bem" data-bem='{"radio":{}}'><button class="button button_togglable_radio button_theme_islands button_size_l button__control i-bem" data-bem='{"button":{}}' role="button" type="button" aria-pressed="false"><span class="button__text">Debugger</span></button><input class="radio__control" type="radio" autocomplete="off" value="1"/></label></span><div class="tabs__tab tabs__tab_active">
-<code class="code" class="lang-js">import Model from &#39;cerebral/models/immutable&#39;
-import {Controller} from &#39;cerebral&#39;
+<code class="code" class="lang-js"><span class="token keyword" >import</span> Model <span class="token keyword" >from</span> <span class="token string" >'cerebral/models/immutable'</span>
+<span class="token keyword" >import</span> <span class="token punctuation" >{</span>Controller<span class="token punctuation" >}</span> <span class="token keyword" >from</span> <span class="token string" >'cerebral'</span>
 
-const model = Model({
-  newItemTitle: &#39;&#39;,
-  isLoading: false,
-  items: [],
-  error: null
-})
+<span class="token keyword" >const</span> model <span class="token operator" >=</span> <span class="token function" >Model</span><span class="token punctuation" >(</span><span class="token punctuation" >{</span>
+  newItemTitle<span class="token punctuation" >:</span> <span class="token string" >''</span><span class="token punctuation" >,</span>
+  isLoading<span class="token punctuation" >:</span> <span class="token boolean" >false</span><span class="token punctuation" >,</span>
+  items<span class="token punctuation" >:</span> <span class="token punctuation" >[</span><span class="token punctuation" >]</span><span class="token punctuation" >,</span>
+  error<span class="token punctuation" >:</span> <span class="token keyword" >null</span>
+<span class="token punctuation" >}</span><span class="token punctuation" >)</span>
 
-const controller = Controller(model)
+<span class="token keyword" >const</span> controller <span class="token operator" >=</span> <span class="token function" >Controller</span><span class="token punctuation" >(</span>model<span class="token punctuation" >)</span>
 
-export default controller
+<span class="token keyword" >export</span> <span class="token keyword" >default</span> controller
 </code>
 </div><div class="tabs__tab">
 <img class="image" src="http://www.cerebraljs.com/model.gif" alt="Debugger"/>
@@ -25,23 +25,23 @@ export default controller
 <p class="paragraph">The debugger knows when signals trigger and what data goes through them, giving you great insight into your application.</p>
 
 </div><div class="row__col row__col_sw_24 row__col_lw_11 row__col_lo row__col_lof row__col_xlof row__col_xxlof"><div class="tabs i-bem" data-bem='{"tabs":{}}'><span class="radio-group radio-group_theme_islands radio-group_size_l radio-group_type_button control-group i-bem" data-bem='{"radio-group":{}}' role="radiogroup"><label class="radio radio_type_button radio_theme_islands radio_size_l radio_checked i-bem" data-bem='{"radio":{}}'><button class="button button_togglable_radio button_checked button_theme_islands button_size_l button__control i-bem" data-bem='{"button":{}}' role="button" type="button" aria-pressed="true"><span class="button__text">submitNewItemTitle.js</span></button><input class="radio__control" type="radio" autocomplete="off" value="0" checked="checked"/></label><label class="radio radio_type_button radio_theme_islands radio_size_l i-bem" data-bem='{"radio":{}}'><button class="button button_togglable_radio button_theme_islands button_size_l button__control i-bem" data-bem='{"button":{}}' role="button" type="button" aria-pressed="false"><span class="button__text">Debugger</span></button><input class="radio__control" type="radio" autocomplete="off" value="1"/></label></span><div class="tabs__tab tabs__tab_active">
-<code class="code" class="lang-js">import {set} from &#39;cerebral/operators&#39;
-import addItem from &#39;../actions/addItem&#39;
+<code class="code" class="lang-js"><span class="token keyword" >import</span> <span class="token punctuation" >{</span><span class="token keyword" >set</span><span class="token punctuation" >}</span> <span class="token keyword" >from</span> <span class="token string" >'cerebral/operators'</span>
+<span class="token keyword" >import</span> addItem <span class="token keyword" >from</span> <span class="token string" >'../actions/addItem'</span>
 
-export default [
-  addItem,
-  set(&#39;state:newItemTitle&#39;, &#39;&#39;),
-  set(&#39;state:isSaving&#39;, true),
-  postItem, {
-    success: [
+<span class="token keyword" >export</span> <span class="token keyword" >default</span> <span class="token punctuation" >[</span>
+  addItem<span class="token punctuation" >,</span>
+  <span class="token keyword" >set</span><span class="token punctuation" >(</span><span class="token string" >'state:newItemTitle'</span><span class="token punctuation" >,</span> <span class="token string" >''</span><span class="token punctuation" >)</span><span class="token punctuation" >,</span>
+  <span class="token keyword" >set</span><span class="token punctuation" >(</span><span class="token string" >'state:isSaving'</span><span class="token punctuation" >,</span> <span class="token boolean" >true</span><span class="token punctuation" >)</span><span class="token punctuation" >,</span>
+  postItem<span class="token punctuation" >,</span> <span class="token punctuation" >{</span>
+    success<span class="token punctuation" >:</span> <span class="token punctuation" >[</span>
       updateItem
-    ],
-    error: [
+    <span class="token punctuation" >]</span><span class="token punctuation" >,</span>
+    error<span class="token punctuation" >:</span> <span class="token punctuation" >[</span>
       removeFailedItem
-    ]
-  },
-  set(&#39;state:isSaving&#39;, false)
-]
+    <span class="token punctuation" >]</span>
+  <span class="token punctuation" >}</span><span class="token punctuation" >,</span>
+  <span class="token keyword" >set</span><span class="token punctuation" >(</span><span class="token string" >'state:isSaving'</span><span class="token punctuation" >,</span> <span class="token boolean" >false</span><span class="token punctuation" >)</span>
+<span class="token punctuation" >]</span>
 </code>
 </div><div class="tabs__tab">
 <img class="image" src="http://www.cerebraljs.com/controller.gif" alt="Debugger"/>
@@ -50,61 +50,61 @@ export default [
 <p class="paragraph">The debugger lets you know all the current active state paths and what components are rendered when these state paths change.</p>
 
 </div><div class="row__col row__col_sw_24 row__col_lw_11 row__col_lo_2"><div class="tabs i-bem" data-bem='{"tabs":{}}'><span class="radio-group radio-group_theme_islands radio-group_size_l radio-group_type_button control-group i-bem" data-bem='{"radio-group":{}}' role="radiogroup"><label class="radio radio_type_button radio_theme_islands radio_size_l radio_checked i-bem" data-bem='{"radio":{}}'><button class="button button_togglable_radio button_checked button_theme_islands button_size_l button__control i-bem" data-bem='{"button":{}}' role="button" type="button" aria-pressed="true"><span class="button__text">React</span></button><input class="radio__control" type="radio" autocomplete="off" value="0" checked="checked"/></label><label class="radio radio_type_button radio_theme_islands radio_size_l i-bem" data-bem='{"radio":{}}'><button class="button button_togglable_radio button_theme_islands button_size_l button__control i-bem" data-bem='{"button":{}}' role="button" type="button" aria-pressed="false"><span class="button__text">Snabbdom</span></button><input class="radio__control" type="radio" autocomplete="off" value="1"/></label><label class="radio radio_type_button radio_theme_islands radio_size_l i-bem" data-bem='{"radio":{}}'><button class="button button_togglable_radio button_theme_islands button_size_l button__control i-bem" data-bem='{"button":{}}' role="button" type="button" aria-pressed="false"><span class="button__text">Inferno</span></button><input class="radio__control" type="radio" autocomplete="off" value="2"/></label><label class="radio radio_type_button radio_theme_islands radio_size_l i-bem" data-bem='{"radio":{}}'><button class="button button_togglable_radio button_theme_islands button_size_l button__control i-bem" data-bem='{"button":{}}' role="button" type="button" aria-pressed="false"><span class="button__text">Debugger</span></button><input class="radio__control" type="radio" autocomplete="off" value="3"/></label></span><div class="tabs__tab tabs__tab_active">
-<code class="code" class="lang-js">import React from &#39;react&#39;
-import {connect} from &#39;cerebral-view-react&#39;
+<code class="code" class="lang-js"><span class="token keyword" >import</span> React <span class="token keyword" >from</span> <span class="token string" >'react'</span>
+<span class="token keyword" >import</span> <span class="token punctuation" >{</span>connect<span class="token punctuation" >}</span> <span class="token keyword" >from</span> <span class="token string" >'cerebral-view-react'</span>
 
-export default connect({
-  items: &#39;items&#39;
-},
-  function Items(props) {
-    return (
-      &lt;ul&gt;
-        {this.props.items.map((item, index) =&gt; (
-          &lt;li key={index}&gt;
-            {item.title}
-          &lt;/li&gt;
-        ))}
-      &lt;/ul&gt;
-    )
-  }
-)
+<span class="token keyword" >export</span> <span class="token keyword" >default</span> <span class="token function" >connect</span><span class="token punctuation" >(</span><span class="token punctuation" >{</span>
+  items<span class="token punctuation" >:</span> <span class="token string" >'items'</span>
+<span class="token punctuation" >}</span><span class="token punctuation" >,</span>
+  <span class="token keyword" >function</span> <span class="token function" >Items</span><span class="token punctuation" >(</span>props<span class="token punctuation" >)</span> <span class="token punctuation" >{</span>
+    <span class="token keyword" >return</span> <span class="token punctuation" >(</span>
+      <span class="token operator" >&lt;</span>ul<span class="token operator" >></span>
+        <span class="token punctuation" >{</span><span class="token keyword" >this</span><span class="token punctuation" >.</span>props<span class="token punctuation" >.</span>items<span class="token punctuation" >.</span><span class="token function" >map</span><span class="token punctuation" >(</span><span class="token punctuation" >(</span>item<span class="token punctuation" >,</span> index<span class="token punctuation" >)</span> <span class="token operator" >=</span><span class="token operator" >></span> <span class="token punctuation" >(</span>
+          <span class="token operator" >&lt;</span>li key<span class="token operator" >=</span><span class="token punctuation" >{</span>index<span class="token punctuation" >}</span><span class="token operator" >></span>
+            <span class="token punctuation" >{</span>item<span class="token punctuation" >.</span>title<span class="token punctuation" >}</span>
+          <span class="token operator" >&lt;</span><span class="token operator" >/</span>li<span class="token operator" >></span>
+        <span class="token punctuation" >)</span><span class="token punctuation" >)</span><span class="token punctuation" >}</span>
+      <span class="token operator" >&lt;</span><span class="token operator" >/</span>ul<span class="token operator" >></span>
+    <span class="token punctuation" >)</span>
+  <span class="token punctuation" >}</span>
+<span class="token punctuation" >)</span>
 </code>
 </div><div class="tabs__tab">
-<code class="code" class="lang-js">import {connect, h} from &#39;cerebral-view-snabbdom&#39;
+<code class="code" class="lang-js"><span class="token keyword" >import</span> <span class="token punctuation" >{</span>connect<span class="token punctuation" >,</span> h<span class="token punctuation" >}</span> <span class="token keyword" >from</span> <span class="token string" >'cerebral-view-snabbdom'</span>
 
-export default connect({
-  items: &#39;items&#39;
-},
-  function Items(props) {
-    return (
-      h(&#39;ul&#39;, props.items.map(item, index) =&gt; (
-        h(&#39;li&#39;, {
-          key: index
-        }, item.title)
-      ))
-    )
-  }
-)
+<span class="token keyword" >export</span> <span class="token keyword" >default</span> <span class="token function" >connect</span><span class="token punctuation" >(</span><span class="token punctuation" >{</span>
+  items<span class="token punctuation" >:</span> <span class="token string" >'items'</span>
+<span class="token punctuation" >}</span><span class="token punctuation" >,</span>
+  <span class="token keyword" >function</span> <span class="token function" >Items</span><span class="token punctuation" >(</span>props<span class="token punctuation" >)</span> <span class="token punctuation" >{</span>
+    <span class="token keyword" >return</span> <span class="token punctuation" >(</span>
+      <span class="token function" >h</span><span class="token punctuation" >(</span><span class="token string" >'ul'</span><span class="token punctuation" >,</span> props<span class="token punctuation" >.</span>items<span class="token punctuation" >.</span><span class="token function" >map</span><span class="token punctuation" >(</span>item<span class="token punctuation" >,</span> index<span class="token punctuation" >)</span> <span class="token operator" >=</span><span class="token operator" >></span> <span class="token punctuation" >(</span>
+        <span class="token function" >h</span><span class="token punctuation" >(</span><span class="token string" >'li'</span><span class="token punctuation" >,</span> <span class="token punctuation" >{</span>
+          key<span class="token punctuation" >:</span> index
+        <span class="token punctuation" >}</span><span class="token punctuation" >,</span> item<span class="token punctuation" >.</span>title<span class="token punctuation" >)</span>
+      <span class="token punctuation" >)</span><span class="token punctuation" >)</span>
+    <span class="token punctuation" >)</span>
+  <span class="token punctuation" >}</span>
+<span class="token punctuation" >)</span>
 </code>
 </div><div class="tabs__tab">
-<code class="code" class="lang-js">import Inferno from &#39;inferno&#39;
-import {connect} from &#39;cerebral-view-inferno&#39;
+<code class="code" class="lang-js"><span class="token keyword" >import</span> Inferno <span class="token keyword" >from</span> <span class="token string" >'inferno'</span>
+<span class="token keyword" >import</span> <span class="token punctuation" >{</span>connect<span class="token punctuation" >}</span> <span class="token keyword" >from</span> <span class="token string" >'cerebral-view-inferno'</span>
 
-export default connect({
-  items: &#39;items&#39;
-},
-  function Items(props) {
-    return (
-      &lt;ul&gt;
-        {this.props.items.map((item, index) =&gt; (
-          &lt;li key={index}&gt;
-            {item.title}
-          &lt;/li&gt;
-        ))}
-      &lt;/ul&gt;
-    )
-  }
-)
+<span class="token keyword" >export</span> <span class="token keyword" >default</span> <span class="token function" >connect</span><span class="token punctuation" >(</span><span class="token punctuation" >{</span>
+  items<span class="token punctuation" >:</span> <span class="token string" >'items'</span>
+<span class="token punctuation" >}</span><span class="token punctuation" >,</span>
+  <span class="token keyword" >function</span> <span class="token function" >Items</span><span class="token punctuation" >(</span>props<span class="token punctuation" >)</span> <span class="token punctuation" >{</span>
+    <span class="token keyword" >return</span> <span class="token punctuation" >(</span>
+      <span class="token operator" >&lt;</span>ul<span class="token operator" >></span>
+        <span class="token punctuation" >{</span><span class="token keyword" >this</span><span class="token punctuation" >.</span>props<span class="token punctuation" >.</span>items<span class="token punctuation" >.</span><span class="token function" >map</span><span class="token punctuation" >(</span><span class="token punctuation" >(</span>item<span class="token punctuation" >,</span> index<span class="token punctuation" >)</span> <span class="token operator" >=</span><span class="token operator" >></span> <span class="token punctuation" >(</span>
+          <span class="token operator" >&lt;</span>li key<span class="token operator" >=</span><span class="token punctuation" >{</span>index<span class="token punctuation" >}</span><span class="token operator" >></span>
+            <span class="token punctuation" >{</span>item<span class="token punctuation" >.</span>title<span class="token punctuation" >}</span>
+          <span class="token operator" >&lt;</span><span class="token operator" >/</span>li<span class="token operator" >></span>
+        <span class="token punctuation" >)</span><span class="token punctuation" >)</span><span class="token punctuation" >}</span>
+      <span class="token operator" >&lt;</span><span class="token operator" >/</span>ul<span class="token operator" >></span>
+    <span class="token punctuation" >)</span>
+  <span class="token punctuation" >}</span>
+<span class="token punctuation" >)</span>
 </code>
 </div><div class="tabs__tab">
 <img class="image" src="http://www.cerebraljs.com/view.gif" alt="Debugger"/>
